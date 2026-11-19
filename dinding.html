@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dinding kapsul waktu: lihat kapsul yang masih terkunci dan baca pesan dari kapsul yang sudah terbuka.">
+  <title>Dinding kapsul | Kapsul Waktu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dinding">
+
+  <header class="site-header">
+    <a class="brand" href="index.html">Kapsul Waktu</a>
+    <nav class="steps" aria-label="Langkah">
+      <a href="index.html">1 Kunci</a>
+      <a href="dinding.html" aria-current="page">2 Dinding</a>
+      <a href="index.html#section-inspirasi" class="nav-api">Inspirasi API</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wall-head">
+      <div>
+        <h1>Dinding kapsul</h1>
+        <p class="lead">Kapsul yang terkunci menunggu tanggalnya. Kapsul yang terbuka boleh dibaca.</p>
+      </div>
+      <a class="btn" href="index.html">Kunci kapsul baru</a>
+    </div>
+
+    <p class="notice" id="notice" role="status" hidden></p>
+
+    <div class="wall-wrap">
+      <input type="radio" name="filter" id="f-all" checked>
+      <input type="radio" name="filter" id="f-locked">
+      <input type="radio" name="filter" id="f-open">
+
+      <div class="filters" role="group" aria-label="Filter kapsul">
+        <label for="f-all">Semua</label>
+        <label for="f-locked">Terkunci</label>
+        <label for="f-open">Terbuka</label>
+      </div>
+
+      <section class="wall" id="wall" aria-label="Daftar kapsul">
+
+        <!-- Kapsul terbuka -->
+        <article class="capsule-card is-open">
+          <header>
+            <h3>Rani</h3>
+            <span class="badge">Terbuka</span>
+          </header>
+          <p class="when">Dikunci 14 Februari 2025</p>
+          <p class="when">Dibuka 1 September 2026</p>
+          <details>
+            <summary>Baca pesan</summary>
+            <div class="letter">
+              <p>Halo Rani yang sudah semester lima. Semoga kamu masih rutin tidur sebelum jam dua belas, dan semoga skripsi belum membuatmu menyerah pada kopi sachet.</p>
+            </div>
+          </details>
+        </article>
+
+        <!-- Kapsul terkunci -->
+        <article class="capsule-card is-locked">
+          <header>
+            <h3>Dimas</h3>
+            <span class="badge">Terkunci</span>
+          </header>
+          <p class="when">Dikunci 12 Maret 2026</p>
+          <p class="when">Dibuka 1 Januari 2027</p>
+          <div class="sealed">Pesan masih tersegel. Belum bisa dibaca.</div>
+        </article>
+
+        <!-- Kapsul terbuka -->
+        <article class="capsule-card is-open">
+          <header>
+            <h3>Alya</h3>
+            <span class="badge">Terbuka</span>
+          </header>
+          <p class="when">Dikunci 3 Agustus 2024</p>
+          <p class="when">Dibuka 3 Agustus 2026</p>
+          <details>
+            <summary>Baca pesan</summary>
+            <div class="letter">
+              <p>Dua tahun lalu aku takut pindah kota. Kalau kamu baca ini, tolong bilang ke diriku yang dulu: ternyata kosnya enak dan teman-temannya baik.</p>
+            </div>
+          </details>
+        </article>
+
+        <!-- Kapsul terkunci -->
+        <article class="capsule-card is-locked">
+          <header>
+            <h3>Bima</h3>
+            <span class="badge">Terkunci</span>
+          </header>
+          <p class="when">Dikunci 20 Juni 2026</p>
+          <p class="when">Dibuka 17 Agustus 2027</p>
+          <div class="sealed">Pesan masih tersegel. Belum bisa dibaca.</div>
+        </article>
+
+        <!-- Kapsul terkunci -->
+        <article class="capsule-card is-locked">
+          <header>
+            <h3>Nadia</h3>
+            <span class="badge">Terkunci</span>
+          </header>
+          <p class="when">Dikunci 1 Oktober 2026</p>
+          <p class="when">Dibuka 2 Mei 2030</p>
+          <div class="sealed">Pesan masih tersegel. Belum bisa dibaca.</div>
+        </article>
+
+        <!-- Kapsul terbuka -->
+        <article class="capsule-card is-open">
+          <header>
+            <h3>Fajar</h3>
+            <span class="badge">Terbuka</span>
+          </header>
+          <p class="when">Dikunci 1 Januari 2026</p>
+          <p class="when">Dibuka 1 Juli 2026</p>
+          <details>
+            <summary>Baca pesan</summary>
+            <div class="letter">
+              <p>Target enam bulan: lulus mata kuliah basis data, mulai olahraga, dan berhenti menunda balas pesan. Silakan dicek mana yang benar-benar jadi.</p>
+            </div>
+          </details>
+        </article>
+
+        <!-- Ajakan ke halaman 1: sistem berkelanjutan -->
+        <article class="capsule-card next" id="next-card">
+          <h3>Kapsul berikutnya milikmu</h3>
+          <p class="when">Tulis pesan baru, pilih tanggal, lalu kunci.</p>
+          <a class="btn" href="index.html">Kunci kapsul baru</a>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Dicky Habib Putra Hidayatullah.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

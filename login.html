@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Masuk atau daftar untuk mengunci kapsul waktumu.">
+  <title>Masuk | Kapsul Waktu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="login">
+
+  <header class="site-header">
+    <a class="brand" href="login.html">Kapsul Waktu</a>
+  </header>
+
+  <main>
+    <div class="auth">
+      <h1>Masuk dulu, baru kunci kapsul.</h1>
+      <p class="lead">Kapsulmu tersimpan atas namamu, jadi hanya kamu yang bisa membukanya lebih awal.</p>
+
+      <div class="auth-tabs" role="tablist" aria-label="Masuk atau daftar">
+        <button type="button" role="tab" id="tab-masuk" aria-selected="true" aria-controls="form-masuk">Masuk</button>
+        <button type="button" role="tab" id="tab-daftar" aria-selected="false" aria-controls="form-daftar">Daftar</button>
+      </div>
+
+      <form class="card-form" id="form-masuk" aria-labelledby="tab-masuk" novalidate>
+        <h2>Masuk</h2>
+        <p class="error" id="err-masuk" role="alert"></p>
+        <div class="field">
+          <label for="m-user">Nama pengguna</label>
+          <input type="text" id="m-user" name="username" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="m-pass">Kata sandi</label>
+          <input type="password" id="m-pass" name="password" autocomplete="current-password" required>
+        </div>
+        <button class="btn" type="submit">Masuk</button>
+      </form>
+
+      <form class="card-form" id="form-daftar" aria-labelledby="tab-daftar" novalidate hidden>
+        <h2>Buat akun</h2>
+        <p class="error" id="err-daftar" role="alert"></p>
+        <div class="field">
+          <label for="d-nama">Nama panggilan</label>
+          <input type="text" id="d-nama" name="nama" maxlength="40" autocomplete="nickname" required>
+        </div>
+        <div class="field">
+          <label for="d-user">Nama pengguna</label>
+          <input type="text" id="d-user" name="username" maxlength="24" autocomplete="username" required>
+          <p class="note">Huruf kecil, angka, titik, atau garis bawah. Minimal 3 karakter.</p>
+        </div>
+        <div class="field">
+          <label for="d-pass">Kata sandi</label>
+          <input type="password" id="d-pass" name="password" autocomplete="new-password" required>
+          <p class="note">Minimal 6 karakter.</p>
+        </div>
+        <div class="field">
+          <label for="d-pass2">Ulangi kata sandi</label>
+          <input type="password" id="d-pass2" name="password2" autocomplete="new-password" required>
+        </div>
+        <button class="btn" type="submit">Daftar dan masuk</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Dicky Habib Putra Hidayatullah.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

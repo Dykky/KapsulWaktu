@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tulis pesan untuk Kamu di masa depan, pilih tanggal buka, lalu kunci kapsulnya.">
+  <title>Kunci kapsul | Kapsul Waktu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="kunci">
+
+  <header class="site-header">
+    <a class="brand" href="index.html">Kapsul Waktu</a>
+    <nav class="steps" aria-label="Langkah">
+      <a href="index.html" aria-current="page">1 Kunci</a>
+      <a href="dinding.html">2 Dinding</a>
+      <a href="#section-inspirasi" class="nav-api">Inspirasi API</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="stage">
+
+      <section>
+        <h1>Tulis hari ini, baca di masa depan.</h1>
+        <p class="lead">Simpan pesan untuk dirimu yang nanti. Kapsul tetap tertutup sampai tanggal yang kamu pilih.</p>
+
+        <div class="capsule" aria-hidden="true">
+          <div class="half top"></div>
+          <div class="half bottom"></div>
+          <div class="seal"></div>
+        </div>
+        <p class="hint">Mulai menulis, dan kapsulnya akan menutup.</p>
+      </section>
+
+      <section>
+        <form class="card-form" id="form-kapsul" action="dinding.html" method="get">
+          <h2>Kapsul baru</h2>
+          <p class="error" id="err-kapsul" role="alert"></p>
+
+          <div class="field">
+            <label for="nama">Nama panggilan</label>
+            <input type="text" id="nama" name="nama" maxlength="40" autocomplete="nickname" required>
+          </div>
+
+          <div class="field">
+            <div class="field-label-row">
+              <label for="pesan">Pesan untuk masa depan</label>
+              <button type="button" id="btn-scroll-inspirasi" class="btn-text-action">Butuh inspirasi? Lihat kutipan API</button>
+            </div>
+            <textarea id="pesan" name="pesan" maxlength="800" placeholder="Tulis harapan, renungan, atau pilih dari inspirasi Public API di bawah..." required></textarea>
+          </div>
+
+          <!-- Widget: Stempel Cuaca Real-Time dari Open-Meteo API (Berdasarkan GPS Lokasi) -->
+          <div class="weather-stamp-box" id="weather-stamp-box">
+            <div class="weather-info">
+              <span class="weather-icon" id="weather-icon" aria-hidden="true">⏳</span>
+              <div class="weather-text-wrap">
+                <div class="weather-header-row">
+                  <span class="weather-badge-title">Cuaca saat ini</span>
+                  <span class="gps-status-badge" id="gps-status-badge">🛰️ Menghubungkan GPS...</span>
+                </div>
+                <span class="weather-desc" id="weather-desc">Mendeteksi koordinat GPS perangkat untuk mengambil cuaca lokasimu...</span>
+              </div>
+            </div>
+            <div class="weather-actions">
+              <button type="button" id="btn-insert-weather" class="btn-stamp btn-stamp-insert" title="Sisipkan kondisi cuaca &amp; lokasi GPS saat ini ke pesan kapsul" disabled>
+                + Sisipkan ke Pesan
+              </button>
+              <button type="button" id="btn-refresh-gps" class="btn-stamp btn-stamp-gps" title="Perbarui koordinat GPS dan cuaca lokasi saat ini">
+                📍 Deteksi Cuaca GPS
+              </button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="tanggal">Tanggal buka</label>
+            <input type="date" id="tanggal" name="tanggal_buka" required>
+            <p class="note">Kapsul tidak bisa dibuka sebelum tanggal ini.</p>
+          </div>
+
+          <div class="check">
+            <input type="checkbox" id="publik" name="publik" value="ya">
+            <label for="publik">Tampilkan di dinding setelah terbuka</label>
+          </div>
+
+          <button class="btn" type="submit">Kunci kapsul</button>
+        </form>
+
+        <p class="link-next">Mau lihat kapsul orang lain dulu? <a href="dinding.html">Buka dinding kapsul</a></p>
+      </section>
+
+    </div>
+
+    <!-- Section: Inspirasi Kapsul dari Public API (Modul 2) -->
+    <section class="inspiration-section" id="section-inspirasi" aria-labelledby="inspiration-title">
+      <div class="inspiration-header">
+        <h2 id="inspiration-title">Inspirasi Pesan Masa Depan</h2>
+        <p class="lead" id="inspiration-desc">Template untuk kata-kata di kapsul waktumu.</p>
+      </div>
+
+      <div class="inspiration-controls">
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Cari kutipan atau nama tokoh..." aria-label="Cari inspirasi secara real-time">
+          <button type="button" id="search-clear" class="btn-clear" aria-label="Hapus pencarian" hidden>&times;</button>
+        </div>
+
+        <div class="aura-filters" role="group" aria-label="Filter Aura Suasana Hati">
+          <button type="button" class="aura-btn active" data-aura="all">Semua Vibe</button>
+          <button type="button" class="aura-btn" data-aura="energy">High Energy</button>
+          <button type="button" class="aura-btn" data-aura="wisdom">Wisdom</button>
+          <button type="button" class="aura-btn" data-aura="hope">Hope &amp; Future</button>
+          <button type="button" class="aura-btn" data-aura="peace">Serenity</button>
+        </div>
+
+        <button type="button" class="btn-refresh" id="btn-refresh-quotes" title="Muat ulang data dari server API">
+          Muat Ulang API
+        </button>
+      </div>
+
+      <div class="api-status-area">
+        <div id="loading-message" class="loading-state" role="status" hidden>
+          <div class="spinner" aria-hidden="true"></div>
+          <span id="loading-text">Sedang menghubungi server &amp; mengambil data dari API...</span>
+        </div>
+
+        <div id="error-message" class="error-state" role="alert" hidden>
+          <p id="error-text">Terjadi kesalahan saat memuat data dari API.</p>
+          <button type="button" class="btn-retry" id="btn-retry-api">Coba Lagi</button>
+        </div>
+      </div>
+
+      <!-- Grid Kartu Data Dinamis -->
+      <div id="inspiration-grid" class="inspiration-grid" aria-live="polite">
+        <!-- Kartu hasil fetch API akan dirender ke sini menggunakan template literal -->
+      </div>
+
+      <p id="empty-message" class="empty-state" hidden>Tidak ada kutipan yang sesuai dengan pencarian atau aura yang dipilih.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Dicky Habib Putra Hidayatullah.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
