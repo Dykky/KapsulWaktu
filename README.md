@@ -1,4 +1,4 @@
-# ⏳ Kapsul Waktu — Simpan Pesan untuk Masa Depan
+# Kapsul Waktu — Simpan Pesan untuk Masa Depan
 
 Aplikasi web interaktif **"Kapsul Waktu"** (*Time Capsule*) memungkinkan pengguna menulis surat atau pesan untuk diri mereka sendiri di masa depan. Pesan disegel secara digital dan hanya dapat dibuka setelah melewati tanggal yang telah ditentukan. Dilengkapi dengan **integrasi REST API Online gratis** untuk merekam cuaca & koordinat GPS saat kapsul dikunci, serta inspirasi kata-kata bijak masa depan.
 
@@ -6,7 +6,7 @@ Proyek ini dikembangkan sebagai pemenuhan **Tugas Pemrograman Web**.
 
 ---
 
-## 📸 Preview Web & Tangkapan Layar Semua Menu
+## Preview Web & Tangkapan Layar Semua Menu
 
 Berikut adalah dokumentasi tangkapan layar asli dari setiap menu dan halaman yang terdapat pada aplikasi web **Kapsul Waktu**:
 
@@ -58,19 +58,19 @@ Halaman eksplorasi seluruh kapsul waktu yang tersimpan di sistem. Dilengkapi fil
 
 ---
 
-## ✨ Fitur-Fitur Utama
+## Fitur-Fitur Utama
 
-### 1. 🔐 Autentikasi Pengguna & Keamanan Lokal
+### 1. Autentikasi Pengguna & Keamanan Lokal
 * **Pendaftaran Akun & Masuk**: Pengguna dapat mendaftarkan akun baru dengan nama panggilan, *username*, dan kata sandi.
 * **Keamanan Kriptografi**: Kata sandi di-*hash* menggunakan algoritma **SHA-256** melalui *Web Crypto API* (`window.crypto.subtle.digest`) sebelum disimpan di `localStorage`.
 * **Proteksi Rute (*Route Guard*)**: Halaman formulir dan dinding kapsul otomatis mengarahkan pengunjung ke halaman `login.html` jika belum memiliki sesi aktif.
 
-### 2. 📝 Kunci Kapsul Baru (`index.html`)
+### 2. Kunci Kapsul Baru (`index.html`)
 * **Formulir Interaktif**: Input nama panggilan, pesan masa depan, tanggal buka kapsul, serta opsi tampilkan di dinding publik.
 * **Animasi Fisik Kapsul**: Animasi CSS visual kapsul yang otomatis menutup dan menyegel saat pengguna mulai mengetik isi pesan di formulir.
 * **Validasi Tanggal Pintar**: Tanggal buka divalidasi minimal hari esok (`tomorrowISO()`) sehingga tidak dapat memilih tanggal lampau.
 
-### 3. 🌤️ Stempel Cuaca Real-Time Berbasis Lokasi GPS (Open-Meteo API)
+### 3. Stempel Cuaca Real-Time Berbasis Lokasi GPS (Open-Meteo API)
 * **Sensor GPS Akurat**: Menggunakan **HTML5 Geolocation API** (`navigator.geolocation`) dengan opsi `enableHighAccuracy: true` untuk membaca titik garis lintang (*latitude*) dan garis bujur (*longitude*) perangkat.
 * **Reverse Geocoding Otomatis**: Titik koordinat GPS diterjemahkan secara otomatis menjadi nama kota/kecamatan (contoh: *Dau, Malang*) menggunakan layanan gratis tanpa API key dari *BigDataCloud Client-side Geocoding*.
 * **Live Weather Data**: Mengambil data suhu udara (°C), tingkat kelembapan (%), dan kondisi cuaca (cerah, berawan, gerimis, hujan) dari **Open-Meteo API**.
@@ -78,9 +78,9 @@ Halaman eksplorasi seluruh kapsul waktu yang tersimpan di sistem. Dilengkapi fil
   ```text
   [Stempel Cuaca Saat Kapsul Dikunci: 19 November 2026 • 📍 Dau (Lat: -7.9223, Lon: 112.5899) • 🌦️ 25.8°C, Gerimis (Kelembapan 72%)]
   ```
-* **Tombol `📍 Deteksi Cuaca GPS`**: Memperbarui titik lokasi dan data cuaca terkini kapan saja.
+* **Tombol ` Deteksi Cuaca GPS`**: Memperbarui titik lokasi dan data cuaca terkini kapan saja.
 
-### 4. 💡 Inspirasi Pesan Masa Depan (Quotes API)
+### 4. Inspirasi Pesan Masa Depan (Quotes API)
 * **REST API Fetch GET**: Mengambil 30 kutipan bijak dan nasihat masa depan dari server **DummyJSON Quotes API** menggunakan `async/await`.
 * **Pencarian Real-Time**: Kolom pencarian instan untuk mencari kata kunci kutipan atau nama tokoh.
 * **Filter Aura Suasana Hati**: Mengelompokkan kutipan ke dalam kategori:
@@ -92,7 +92,7 @@ Halaman eksplorasi seluruh kapsul waktu yang tersimpan di sistem. Dilengkapi fil
 * **Tombol `Gunakan di Kapsul →`**: Menyalin kutipan langsung ke kolom pesan formulir dengan efek animasi *smooth highlight*.
 * **State Management**: Dilengkapi indikator pemuatan (*loading spinner*) dan penanganan galat (*error handling*) dengan tombol coba lagi.
 
-### 5. 📜 Dinding Kapsul Waktu (`dinding.html`)
+### 5. Dinding Kapsul Waktu (`dinding.html`)
 * **Tampilan Kartu Dinamis**: Menyajikan daftar kapsul yang tersimpan.
 * **Mekanisme Segel Waktu**:
   * **Kapsul Terkunci**: Ditandai badge merah *Terkunci*, pesan tetap tersegel rapat dan tidak dapat dibaca hingga tanggal buka tiba.
@@ -101,7 +101,7 @@ Halaman eksplorasi seluruh kapsul waktu yang tersimpan di sistem. Dilengkapi fil
 
 ---
 
-## 🔄 Alur Kerja Aplikasi (Workflow)
+## Alur Kerja Aplikasi (Workflow)
 
 ```mermaid
 flowchart TD
@@ -133,7 +133,7 @@ flowchart TD
 
 ---
 
-## 🌐 Rincian Integrasi REST API Online
+## Rincian Integrasi REST API Online
 
 Aplikasi ini menggunakan **2 Public API Online 100% Gratis** tanpa membutuhkan pendaftaran kartu kredit maupun API key:
 
@@ -145,7 +145,7 @@ Aplikasi ini menggunakan **2 Public API Online 100% Gratis** tanpa membutuhkan p
 
 ---
 
-## 📁 Struktur Berkas Proyek
+## Struktur Berkas Proyek
 
 ```text
 Tugas Pemrograman web/
@@ -168,7 +168,7 @@ Tugas Pemrograman web/
 
 ---
 
-## 🚀 Panduan Menjalankan Proyek
+## Panduan Menjalankan Proyek
 
 1. **Unduh / Kloning Repositori**:
    Pastikan seluruh berkas berada di dalam satu folder yang sama.
@@ -181,7 +181,7 @@ Tugas Pemrograman web/
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 * **HTML5**: Semantik modern (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<details>`, `<summary>`).
 * **CSS3**:
@@ -199,7 +199,7 @@ Tugas Pemrograman web/
 
 ---
 
-## 👨‍💻 Pengembang
+## Pengembang
 
 * **Nama**: Dicky Habib Putra Hidayatullah
 * **Mata Kuliah**: Praktikum Pemrograman Web (Semester 5)
